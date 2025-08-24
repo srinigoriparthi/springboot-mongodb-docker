@@ -1,0 +1,14 @@
+version: "3"
+services:
+  gsraomongodb:
+    image: mongo:latest
+    container_name: "gsraomongodb"
+    ports:
+      - 27017:27017
+  springboot-mongodb-docker:
+    image: springboot-mongodb-docker:1.0
+    container_name: springboot-mongodb-docker
+    ports:
+      - 8080:8080
+    links:
+      - gsraomongodb
